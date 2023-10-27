@@ -1,0 +1,41 @@
+name: 'Create DevOps Deploy component version'
+description: 'Create a new version for a DevOps Deploy component'
+inputs:
+  component:
+    description: 'Component Name/ID'
+    required: true
+  versionname:
+    description: 'Component Version Name'
+    required: true
+  description:
+    description: 'Component version description'
+    required: false
+  link:
+    description: 'URL to add to component version'
+    required: false
+  hostname:
+    description: 'DevOps Deploy hostname'
+    required: true
+  port:
+    description: 'port'
+    required: true
+    default: '8443'
+  username:
+    description: 'username'
+    required: false
+  password:
+    description: 'password'
+    required: false
+    secret: true
+  authToken:
+    description: 'DevOps Deploy authentication token'
+    required: false
+    secret: true
+  disableSSLVerification:
+    description: 'skip SSL certificate validation when making HTTPS requests and this is discouraged'
+    required: true
+    type: boolean
+    default: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
