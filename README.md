@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: tpneal/create-ucd-component-version-javascript-action@v1.32
+      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v1.32
       with:
         component: 'MyComp'
         versionname: '${{ github.event.head_commit.id }}'
