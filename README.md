@@ -34,8 +34,8 @@ jobs:
       uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@main
       with:
         component: 'MyComp'
-        versionname: '${{ github.event.head_commit.id }}'
-        description: '${{ github.repositoryUrl }}'
+        versionname: '${{ github.event.head_commit.message }}'
+        description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'DevOps_Deploy_Server_hostname'
         port: '8443'

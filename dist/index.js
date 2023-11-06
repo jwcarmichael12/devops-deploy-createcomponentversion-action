@@ -216,7 +216,7 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const component = process.env.INPUT_COMPONENT;
-const versionname = process.env.INPUT_VERSIONNAME;
+let versionname = process.env.INPUT_VERSIONNAME.replace(/ /g, "_");
 const description = process.env.INPUT_DESCRIPTION;
 const link = process.env.INPUT_LINK;
 
@@ -230,10 +230,12 @@ const https = __nccwpck_require__(687);
 const date = new Date();
 const currentDateTime = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + "." + date.getHours() + "." + date.getMinutes() + "." + date.getSeconds();
 
+versionname = versionname.length > 0 ? versionname.substring(0,59) : currentDateTime;
+
 __nccwpck_require__.e(/* import() */ 460).then(__nccwpck_require__.t.bind(__nccwpck_require__, 460, 23))
   .then((module) => {
     const fetch = module.default;
-    const apiUrl = 'https://' + hostname + ':' + port + '/cli/version/createVersion?component=' + component + '&name=' + (versionname.length > 0 ? versionname : currentDateTime) + '&description=' + description + '&importing=true';
+    const apiUrl = 'https://' + hostname + ':' + port + '/cli/version/createVersion?component=' + component + '&name=' + versionname + '&description=' + description + '&importing=true';
     
     console.log("Triggering creation of new DevOps Deploy component version with " + apiUrl);
 
@@ -272,7 +274,7 @@ __nccwpck_require__.e(/* import() */ 460).then(__nccwpck_require__.t.bind(__nccw
       .then(() => {
         // Mark the component version creation/import as 'finished' so any
         // configured Deployment Triggers will fire.
-        const finishUrl = 'https://' + hostname + ':' + port + '/cli/version/finishedImporting?component=' + component + '&version=' + (versionname.length > 0 ? versionname : currentDateTime);
+        const finishUrl = 'https://' + hostname + ':' + port + '/cli/version/finishedImporting?component=' + component + '&version=' + versionname;
 
         console.log("Finishing creation of new DevOps Deploy component version with " + finishUrl);
         fetch(finishUrl, {
@@ -290,7 +292,7 @@ __nccwpck_require__.e(/* import() */ 460).then(__nccwpck_require__.t.bind(__nccw
         .then(() => {
           // Add link to the new component version if one was given
           if (link != "") {
-            const linkUrl = 'https://' + hostname + ':' + port + '/cli/version/addLinkWithName?component=' + component + '&version=' + (versionname.length > 0 ? versionname : currentDateTime);
+            const linkUrl = 'https://' + hostname + ':' + port + '/cli/version/addLinkWithName?component=' + component + '&version=' + versionname;
             const data = {
               "isPriority": "true",
               "link": link,
