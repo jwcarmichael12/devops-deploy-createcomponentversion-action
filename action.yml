@@ -1,5 +1,8 @@
 name: 'Create DevOps Deploy component version'
 description: 'Create a new version for a DevOps Deploy component'
+branding:
+  icon: 'arrow-up-right'
+  color: 'purple'
 inputs:
   component:
     description: 'Component Name/ID'
