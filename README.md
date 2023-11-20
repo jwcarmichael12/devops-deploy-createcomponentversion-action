@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: Create Component Version
-      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@main
+      uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v1.0
       with:
         component: 'MyComp'
         versionname: '${{ github.event.head_commit.message }}'
