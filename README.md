@@ -30,11 +30,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set short_commit_id
+      id: vars
+      run: echo "short_commit_id=$(echo ${{ github.event.head_commit.id }} | cut -c1-7)" >> "$GITHUB_ENV"
     - name: Create Component Version
       uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v1.0
       with:
         component: 'MyComp'
-        versionname: '${{ github.event.head_commit.message }}'
+        versionname: '${{ env.short_commit_id }}:${{ github.event.head_commit.message }}'
         description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
         hostname: 'DevOps_Deploy_Server_hostname'
