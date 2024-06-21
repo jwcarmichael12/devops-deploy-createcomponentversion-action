@@ -11,10 +11,10 @@
 # FILES_BASE
 #
 # The following environment variables can be OPTIONALLY set prior to invocation of the script:
-# FILES_OFFSET: "${{ inputs.offset }}"
-# FILES_INCLUDE: "${{ inputs.include }}"
-# FILES_EXCLUDE: "${{ inputs.exclude }}"
-# FILES_SAVEEXECUTEBITS: ${{ inputs.saveExecuteBits }}
+# FILES_OFFSET
+# FILES_INCLUDE
+# FILES_EXCLUDE
+# FILES_SAVEEXECUTEBITS
 
 #set -x
 base_cmd=""
