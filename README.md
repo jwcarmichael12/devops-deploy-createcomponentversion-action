@@ -44,4 +44,3 @@ jobs:
         port: '8443'
         authToken: '${{ secrets.DEVOPS_DEPLOY_AUTHTOKEN }}'
 ```
-# hello-world
