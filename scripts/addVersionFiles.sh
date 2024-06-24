@@ -16,7 +16,7 @@
 # FILES_EXCLUDE
 # FILES_SAVEEXECUTEBITS
 
-#set -x
+set -x
 base_cmd=""
 
 # Create the command to execute
@@ -80,4 +80,5 @@ then
 fi
 
 # Invoke the udclient to add version files to the component version
+echo $base_cmd
 eval $base_cmd
