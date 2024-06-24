@@ -10,7 +10,7 @@
 # VERSION_PROPERTIES_VERSIONNAME
 # VERSION_PROPERTIES
 
-set -x
+#set -x
 base_cmd=""
 
 # Create the command to execute
@@ -67,7 +67,6 @@ do
       exit 1
     fi
     property_cmd="$base_cmd -name \"$key\" -value \"$value\" -isSecure $secure"
-    echo "Property command: $property_cmd"
     eval $property_cmd
 done <<< $VERSION_PROPERTIES
 
