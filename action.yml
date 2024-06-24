@@ -84,8 +84,7 @@ runs:
       id: set-env-variables
       run: |
         if [ ! -z ${{ inputs.authtoken }} ]; then echo "DS_AUTH_TOKEN=${{ inputs.authtoken }}" >> $GITHUB_ENV; fi &&
-        echo "DS_WEB_URL=${{ inputs.urlType }}//${{ inputs.hostname }}:${{ inputs.port }}" >> $GITHUB_ENV &&
-        export
+        echo "DS_WEB_URL=${{ inputs.urlType }}//${{ inputs.hostname }}:${{ inputs.port }}" >> $GITHUB_ENV
       shell: bash
 
     # Create component version
