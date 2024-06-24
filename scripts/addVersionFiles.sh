@@ -16,7 +16,7 @@
 # FILES_EXCLUDE
 # FILES_SAVEEXECUTEBITS
 
-set -x
+#set -x
 base_cmd=""
 
 # Create the command to execute
