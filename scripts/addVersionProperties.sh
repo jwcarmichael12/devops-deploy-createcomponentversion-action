@@ -67,6 +67,7 @@ do
       exit 1
     fi
     property_cmd="$base_cmd -name \"$key\" -value \"$value\" -isSecure $secure"
+    echo "Property command: $property_cmd"
     eval $property_cmd
 done <<< $VERSION_PROPERTIES
 
