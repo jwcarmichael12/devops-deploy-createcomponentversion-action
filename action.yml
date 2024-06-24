@@ -14,6 +14,7 @@ inputs:
   linkName:
     description: 'Name of link to add to component version'
     required: false
+    default: 'GitHub Composition Action Link Name'
   link:
     description: 'Value of the link to add to component version'
     required: false
