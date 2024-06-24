@@ -10,6 +10,7 @@ inputs:
   description:
     description: 'Component version description'
     required: false
+    default: 'Created by following GitHub action: Create Component Version Composite Action'
   linkName:
     description: 'Name of link to add to component version'
     required: false
@@ -80,7 +81,7 @@ runs:
     # Create component version
     - name: Create component version
       id: create-component-version
-      run: udclient/udclient createVersion -component "${{ inputs.component }}" -name "${{ inputs.versionname }}"  --importing true
+      run: udclient/udclient createVersion -component "${{ inputs.component }}" -name "${{ inputs.versionname }}"  -description "${{ inputs.description }}" --importing true
       shell: bash
       env:
         DS_WEB_URL: ${{ inputs.urlType }}//${{ inputs.hostname }}:${{ inputs.port }}
