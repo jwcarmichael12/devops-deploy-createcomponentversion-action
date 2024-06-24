@@ -3,7 +3,7 @@
 #
 # The following environment variables are REQUIRED to be set prior to invocation of the script:
 # JAVA_HOME
-# DS_AUTH_TOKEN
+# DS_AUTH_TOKEN or DS_USERNAME/DS_PASSWORD
 # DS_WEB_URL
 # VERSION_PROPERTIES_CMD
 # VERSION_PROPERTIES_COMPONENTNAME
