@@ -10,7 +10,7 @@
 # VERSION_PROPERTIES_VERSIONNAME
 # VERSION_PROPERTIES
 
-#set -x
+set -x
 base_cmd=""
 
 # Create the command to execute
