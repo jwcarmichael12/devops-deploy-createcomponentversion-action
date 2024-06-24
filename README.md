@@ -21,8 +21,9 @@ This action uses the DevOps Deploy udclient cli to communicate with the DevOps D
                                   new-line character.
 * `urlType` (optional): URL protocol to use to connect to DevOps Deploy hostname.  Default is "https:".
 * `hostname` (required): Hostname or IP of the DevOps Deploy server.
-* `port` (required): Port number of the DevOps Deploy server. Defaults to 8443.
-* `authToken` (required): Authentication token used to authenticate with the DevOps Deploy server.
+* `username` (username:password or authToken is required): Username used to authenticate with the DevOps Deploy server.
+* `password` (username:password or authToken is required): Password used to authenticate with the DevOps Deploy server.
+* `authToken` (username:password or authToken is required): Authentication token used to authenticate with the DevOps Deploy server.  This will override the username:password if specified.
 
 ## Example Usage
 
