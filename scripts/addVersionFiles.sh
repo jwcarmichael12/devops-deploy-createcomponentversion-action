@@ -80,5 +80,4 @@ then
 fi
 
 # Invoke the udclient to add version files to the component version
-echo "Command to execute: $base_cmd"
 eval $base_cmd
