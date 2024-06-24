@@ -48,6 +48,13 @@ inputs:
     description: 'port'
     required: true
     default: '8443'
+  username:
+    description: 'DevOps Deploy username'
+    required: false
+  password:
+    description: 'DevOps Deploy password'
+    required: false
+    secret: true
   authToken:
     description: 'DevOps Deploy authentication token'
     required: false
@@ -80,10 +87,12 @@ runs:
       shell: bash
 
     # Setup global environment variables used by udclient
-    - name: Set global environment variables
+    - name: Set global environment variables.
       id: set-env-variables
       run: |
         if [ ! -z ${{ inputs.authtoken }} ]; then echo "DS_AUTH_TOKEN=${{ inputs.authtoken }}" >> $GITHUB_ENV; fi &&
+        if [ ! -z ${{ inputs.username }} ]; then echo "DS_USERNAME=${{ inputs.username }}" >> $GITHUB_ENV; fi &&
+        if [ ! -z ${{ inputs.password }} ]; then echo "DS_PASSWORD=${{ inputs.password }}" >> $GITHUB_ENV; fi &&
         echo "DS_WEB_URL=${{ inputs.urlType }}//${{ inputs.hostname }}:${{ inputs.port }}" >> $GITHUB_ENV
       shell: bash
 
