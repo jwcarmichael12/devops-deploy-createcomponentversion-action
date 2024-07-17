@@ -21,6 +21,7 @@ This action uses the DevOps Deploy udclient cli to communicate with the DevOps D
                                   new-line character.
 * `urlType` (optional): URL protocol to use to connect to DevOps Deploy hostname.  Default is "https:".
 * `hostname` (required): Hostname or IP of the DevOps Deploy server.
+* `port` (required): Port number of the DevOps Deploy server. Defaults to 8443.
 * `username` (username:password or authToken is required): Username used to authenticate with the DevOps Deploy server.
 * `password` (username:password or authToken is required): Password used to authenticate with the DevOps Deploy server.
 * `authToken` (username:password or authToken is required): Authentication token used to authenticate with the DevOps Deploy server.  This will override the username:password if specified.
@@ -49,7 +50,7 @@ jobs:
       - name: Set optional global flags for udclient command
         id: set-optional-global-flags
         run: echo "UC_TLS_VERIFY_CERTS=false" >> "$GITHUB_ENV"
-      - uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v2devel
+      - uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v2.0
         with:
           component: 'MyComp'
           versionname: '${{ env.short_commit_id }}:${{ github.event.head_commit.message }}'
