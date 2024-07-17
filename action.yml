@@ -1,5 +1,8 @@
 xpname: 'Create Component Version Composite Action'
 description: 'Create Component Version, Add Version Link, Add Version Files, Add Version Properties'
+branding:
+  icon: 'arrow-up-right'
+  color: 'purple'
 inputs:
   component:
     description: 'Component Name/ID'
