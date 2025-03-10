@@ -96,7 +96,7 @@ runs:
         if [ ! -z ${{ inputs.authtoken }} ]; then echo "DS_AUTH_TOKEN=${{ inputs.authtoken }}" >> $GITHUB_ENV; fi &&
         if [ ! -z ${{ inputs.username }} ]; then echo "DS_USERNAME=${{ inputs.username }}" >> $GITHUB_ENV; fi &&
         if [ ! -z ${{ inputs.password }} ]; then echo "DS_PASSWORD=${{ inputs.password }}" >> $GITHUB_ENV; fi &&
-        echo "DS_WEB_URL=${{ inputs.urlType }}//${{ inputs.hostname }}:${{ inputs.port }}" >> $GITHUB_ENV
+        echo "DS_WEB_URL=${{ inputs.urlType }}//${{ inputs.hostname }}:${{ inputs.port }}/deploy" >> $GITHUB_ENV
       shell: bash
 
     # Create component version
